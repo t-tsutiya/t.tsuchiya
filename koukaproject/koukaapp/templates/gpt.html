@@ -1,0 +1,8 @@
+<form method='post'>
+    {% csrf_token %}
+    {{ form }}
+<input type="submit" value="質問する">
+
+</form>
+
+{{ answer_data }}

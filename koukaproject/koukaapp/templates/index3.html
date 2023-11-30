@@ -1,0 +1,500 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SHOP HOMEPAGE </title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href={% static 'assets/favicon.ico' %} />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href={% static 'css/styles.css' %} rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href={% url "koukaapp:index" %}>SHOP HOMEPAGE</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'koukaapp:index' %}">ホーム</a></li>
+                      
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">買う</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'koukaapp:index' %}">値段</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'koukaapp:popular' %}">昇順</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'koukaapp:new' %}">降順</a></li>
+                            </ul>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'koukaapp:contact' %}">お問い合わせ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'koukaapp:gpttest' %}">ChatGPT</a></li>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="masthead" style="background-image: url({% static 'assets/img/home-bg.jpg' %})">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Shop in style</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">...........................................</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/jacket.png' %}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Jacket</h5>
+                                    <!-- Product price-->
+                                    $120.00 
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <style>
+                                    .example2{
+                                        display: flex;
+                                    }
+                                    .example2 label{
+                                        display: block;
+                                        width: 150px;
+                                        background: #f00;
+                                        color: #000;
+                                        padding: 10px;
+                                        margin: 10px;
+                                        box-sizing: border-box;
+                                        text-align: center;
+                                        text-decoration: none;
+                                        border-radius: 30px;
+                                        cursor: pointer;
+                                    }
+                                    .example2 input:checked+label{
+                                        background: #ffffff;
+                                        color: #000000;
+                                    }
+                                    .example2 input{
+                                        display: none;
+                                    }
+                                    </style>
+                                    <div class="example2">
+                                        <input type="checkbox" checked id="1" name="example2"><label for="1">♡</label>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/shoes.png' %}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Shoes</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    $40.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <style>
+                                    .example4{
+                                        display: flex;
+                                    }
+                                    .example4 label{
+                                        display: block;
+                                        width: 150px;
+                                        background: #f00;
+                                        color: #000;
+                                        padding: 10px;
+                                        margin: 10px;
+                                        box-sizing: border-box;
+                                        text-align: center;
+                                        text-decoration: none;
+                                        border-radius: 30px;
+                                        cursor: pointer;
+                                    }
+                                    .example4 input:checked+label{
+                                        background: #ffffff;
+                                        color: #000000;
+                                    }
+                                    .example4 input{
+                                        display: none;
+                                    }
+                                    </style>
+                                    <div class="example4">
+                                        <input type="checkbox" checked id="4" name="example4"><label for="4">♡</label>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/floewr.png' %}" alt="..." />
+                            
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Knit</h5>
+                                    <!-- Product price-->
+                                    $40.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <style>
+                                    .example5{
+                                        display: flex;
+                                    }
+                                    .example5 label{
+                                        display: block;
+                                        width: 150px;
+                                        background: #f00;
+                                        color: #000;
+                                        padding: 10px;
+                                        margin: 10px;
+                                        box-sizing: border-box;
+                                        text-align: center;
+                                        text-decoration: none;
+                                        border-radius: 30px;
+                                        cursor: pointer;
+                                    }
+                                    .example5 input:checked+label{
+                                        background: #ffffff;
+                                        color: #000000;
+                                    }
+                                    .example5 input{
+                                        display: none;
+                                    }
+                                    </style>
+                                    <div class="example5">
+                                        <input type="checkbox" checked id="5" name="example5"><label for="5">♡</label>
+                                    </div>                            
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/shir.png' %}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Shirt</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    $40.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <style>
+                                    .example6{
+                                        display: flex;
+                                    }
+                                    .example6 label{
+                                        display: block;
+                                        width: 150px;
+                                        background: #f00;
+                                        color: #000;
+                                        padding: 10px;
+                                        margin: 10px;
+                                        box-sizing: border-box;
+                                        text-align: center;
+                                        text-decoration: none;
+                                        border-radius: 30px;
+                                        cursor: pointer;
+                                    }
+                                    .example6 input:checked+label{
+                                        background: #ffffff;
+                                        color: #000000;
+                                    }
+                                    .example6 input{
+                                        display: none;
+                                    }
+                                    </style>
+                                    <div class="example6">
+                                        <input type="checkbox" checked id="6" name="example6"><label for="6">♡</label>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/coat.png' %}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Coat</h5>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$50.00</span>
+                                    $25.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <style>
+                                    .example8{
+                                        display: flex;
+                                    }
+                                    .example8 label{
+                                        display: block;
+                                        width: 150px;
+                                        background: #f00;
+                                        color: #000;
+                                        padding: 10px;
+                                        margin: 10px;
+                                        box-sizing: border-box;
+                                        text-align: center;
+                                        text-decoration: none;
+                                        border-radius: 30px;
+                                        cursor: pointer;
+                                    }
+                                    .example8 input:checked+label{
+                                        background: #ffffff;
+                                        color: #000000;
+                                    }
+                                    .example8 input{
+                                        display: none;
+                                    }
+                                    </style>
+                                    <div class="example8">
+                                        <input type="checkbox" checked id="8" name="example8"><label for="8">♡</label>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/shirt.png' %}" alt="..." /> 
+                            
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Shirt</h5>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$50.00</span> 
+                                    $25.00
+                                    
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <style>
+                                    .example7{
+                                        display: flex;
+                                    }
+                                    .example7 label{
+                                        display: block;
+                                        width: 150px;
+                                        background: #f00;
+                                        color: #000;
+                                        padding: 10px;
+                                        margin: 10px;
+                                        box-sizing: border-box;
+                                        text-align: center;
+                                        text-decoration: none;
+                                        border-radius: 30px;
+                                        cursor: pointer;
+                                    }
+                                    .example7 input:checked+label{
+                                        background: #ffffff;
+                                        color: #000000;
+                                    }
+                                    .example7 input{
+                                        display: none;
+                                    }
+                                    </style>
+                                    <div class="example7">
+                                        <input type="checkbox" checked id="7" name="example7"><label for="7">♡</label>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/bag.png' %}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Bag</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                    $18.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <style>
+                                    .example9{
+                                        display: flex;
+                                    }
+                                    .example9 label{
+                                        display: block;
+                                        width: 150px;
+                                        background: #f00;
+                                        color: #000;
+                                        padding: 10px;
+                                        margin: 10px;
+                                        box-sizing: border-box;
+                                        text-align: center;
+                                        text-decoration: none;
+                                        border-radius: 30px;
+                                        cursor: pointer;
+                                    }
+                                    .example9 input:checked+label{
+                                        background: #ffffff;
+                                        color: #000000;
+                                    }
+                                    .example9 input{
+                                        display: none;
+                                    }
+                                    </style>
+                                    <div class="example9">
+                                        <input type="checkbox" checked id="9" name="example9"><label for="9">♡</label>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/pants.png' %}" alt="..." />
+                            
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Denim</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                    $18.00
+                                    
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <style>
+                                    .example10{
+                                        display: flex;
+                                    }
+                                    .example10 label{
+                                        display: block;
+                                        width: 150px;
+                                        background: #f00;
+                                        color: #000;
+                                        padding: 10px;
+                                        margin: 10px;
+                                        box-sizing: border-box;
+                                        text-align: center;
+                                        text-decoration: none;
+                                        border-radius: 30px;
+                                        cursor: pointer;
+                                    }
+                                    .example10 input:checked+label{
+                                        background: #ffffff;
+                                        color: #000000;
+                                    }
+                                    .example10 input{
+                                        display: none;
+                                    }
+                                    </style>
+                                    <div class="example10">
+                                        <input type="checkbox" checked id="10" name="example10"><label for="10">♡</label>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
